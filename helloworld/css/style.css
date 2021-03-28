@@ -1,0 +1,125 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "微软雅黑";
+}
+
+/*导航栏*/
+
+#nav1{
+	width: 100%;
+	height: 70px;
+	line-height: 60px;
+}
+
+#nav1 a{
+	color: #222222;
+	font-size: small;
+	text-decoration: none;
+	margin: 10px 15px;
+}
+
+#nav1 img {
+	vertical-align:middle;
+	width: 20px;
+	height: 20px;
+	margin: 3px;
+}
+
+#weather-condition {
+	background-color: #4E71F2;
+	color: white;
+	padding: 1px 2px 1px 2px;
+	border-radius: 3px;
+}
+
+#nav1-left {
+	float: left;
+	
+}
+
+#nav1-right {
+	float: right;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+/*主图*/
+#main-pic {
+	text-align: center;
+	width: 100%;
+	height: 150px;
+}
+
+#main-pic img {
+	width: 300px;
+	height: 140px;
+	vertical-align: middle;
+}
+
+/*搜索框*/
+
+#search {
+	text-align: center;
+}
+
+#search-content {
+	outline-style: none;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 7px 0px;
+	width: 600px;
+	margin-right: 0px;
+	font-size: 20px;
+	outline: 0;
+}
+
+#search-content:focus {
+	border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+
+/*搜索按钮*/
+#search-submmit {
+	outline-style: none;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 7px 0px;
+	width: 150px;
+	margin: 0;
+	border: none;
+	outline: 0;
+	font-size: 20px;
+	background-color: #4E6EF2;
+	color: white;
+}
+
+#search-submmit:hover {
+	background-color: #4662D9;
+}
+
+
+
+/*脚注*/
+#foot{
+	text-align: center;
+	color: lightgray;
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+}
+
+#foot a{
+	color: lightgray;
+	font-size: smaller;
+	text-decoration: none;
+	margin: 10px 10px;
+	
+}
