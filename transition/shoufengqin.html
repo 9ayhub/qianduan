@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style type="text/css">
+            #box {
+                width: 300px;
+                height: 40px;
+                overflow: hidden;
+            }
+            .item {
+                float: left;
+                width: 20%;
+                height: 100%;
+                transition: all 0.5s;
+            }
+            .item:nth-child(4) {background-color: hotpink;}
+            .item:nth-child(3) {background-color: rgba(255, 105, 180, 0.644);}
+            .item:nth-child(2) {background-color: rgba(255, 105, 180, 0.171);}
+            .item:nth-child(1) {width: 40%; background-color: rgba(255, 105, 188, 0.384);}
+            #box:hover div {
+                width: 20%;
+            }
+            #box div:hover {
+                width: 40%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </body>
+</html>
