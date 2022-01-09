@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>flash</title>
+        <style type="text/css">
+            #wrapper {
+                position: relative;
+                width: 240px;
+                height: 180px;
+                cursor: pointer;
+            }
+            #flash {
+                position: absolute;
+                top: 0;
+                left: -120px;
+                width: 100px;
+                height: 100%;
+                background: -webkit-linear-gradient(left,rgba(255,255,255,0) 40%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 100%);
+                transform: skewX(-30deg);
+            }
+            #wrapper:hover #flash {
+                left: 300px;
+                transition: all 0.5s ease-in-out;
+            }
+            #dog {
+                margin: 10px;
+                width: 230px;
+                height: 170px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="flash"></div>
+            <img id="dog" src="img/pic3.png" alt="dog">
+        </div>
+    </body>
+</html>
