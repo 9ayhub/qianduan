@@ -39,43 +39,55 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <tgmath.h>
+#include <regex>
 
 using namespace std;
-void dfs(vector<vector<char>>& grid, int i, int j, vector<vector<bool>>& visited) {
-    int directions[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-    int m = grid.size();
-    int n = grid[i].size();
 
-    if(i < 0 || i >= m || j < 0 || j >= n) return;
-    if(visited[i][j] || grid[i][j] == '0') return;
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
 
-    visited[i][j] = true;
-    for(auto dir : directions) {
-        dfs(grid, i + dir[0], j + dir[1], visited);
-    }
+TreeNode* helper(queue<TreeNode*>& nodes) {
+    if(nodes.empty()) return nullptr;
+    TreeNode* root = nodes.front();
+    nodes.pop();
+    if(!root) return nullptr;
+    root->left = helper(nodes);
+    root->right = helper(nodes);
+    return root;
 }
-int numIslands(vector<vector<char>>& grid) {
-    int m = grid.size();
-    int n = grid[0].size();
-    vector<vector<bool>> visited(m, vector<bool>(n));
-    int res = 0;
 
-    for(int i = 0; i < m; i++) {
-        for(int j = 0; j < n; j++) {
-            if(grid[i][j] == '1' && !visited[i][j]) {
-                res++;
-                dfs(grid, i, j, visited);
-            }
-        }
-    }
-
-    return res;
+// Encodes a tree to a single string.
+string serialize(TreeNode* root) {
+    if(!root) return "#";
+    return to_string(root->val) + "," + serialize(root->left) + "," + serialize(root->right);
 }
+
+// Decodes your encoded data to tree.
+TreeNode* deserialize(string data) {
+    queue<TreeNode*> nodes;
+    regex ws_re(",");
+    vector<string> v(sregex_token_iterator(data.begin(), data.end(), ws_re, -1), sregex_token_iterator());
+    for(auto a : v) {
+        TreeNode* root = nullptr;
+        if(a != "#") root = new TreeNode(atoi(a.c_str()));
+        nodes.push(root);
+    }
+    return helper(nodes);
+}
+
+
+
 
 int main() {
-    vector<vector<char>> grid;
-    grid.push_back({'1','0'});
-    grid.push_back({'0','1'});
-    cout << numIslands(grid);
-    return 0;
+    TreeNode* root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    string s = serialize(root);
+    cout << s << endl;
+    TreeNode* res_root = deserialize(s);
+    cout << serialize(res_root) << endl;
 }

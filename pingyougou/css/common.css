@@ -161,12 +161,14 @@
     height: 31px;
     line-height: 31px;
     margin-left: 1px;
-    padding: 0 10px;/* 盒子没有宽度，所以padding不会撑大盒子 */
+    padding: 1px 10px;/* 盒子没有宽度，所以padding不会撑大盒子 */
     color: #fff;
+    transition: padding 0.4s;
 }
 /* 学了js后再用js做 */
 .menu_item:hover {
     background-color: #fff;
+    padding: 1px 10px 1px 20px;
 }
 .menu_item:hover a {
     color: #c81623;

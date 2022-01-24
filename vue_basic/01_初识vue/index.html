@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>初识Vue</title>
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <h1>hi,{{name}}</h1>
+        </div>
+        <script type="text/javascript">
+            Vue.config.productionTip = false
+
+            const x = new Vue({
+                el: '#root',
+                data: {
+                    name: '尚硅谷',
+                    age: 18
+                }
+            })
+        </script>
+    </body>
+</html>
