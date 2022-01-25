@@ -7,8 +7,8 @@
     </head>
     <body>
         <div id="root">
-            <h1>学校名字：{{name}}</h1>
-            <h1>学校地址：{{address}}</h1>
+            <h2>{{name}}</h2>
+            <h2>{{address}}</h2>
         </div>
     </body>
 
@@ -16,11 +16,13 @@
         Vue.config.productionTip = false
         const vm = new Vue({
             el: '#root',
+            // vm.data => vm._data
             data: {
-                name:'希望小学',
-                address:'中国'
+                name: '尚硅谷',
+                address: '北京'
             }
         })
-        console.log(vm)
+
+        
     </script>
 </html>

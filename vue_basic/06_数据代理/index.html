@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>初识Vue</title>
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+
+        let number = 18;
+        let person = {
+            name: "王兴德",
+            sex: '男'
+        }
+        Object.defineProperty(person, 'age', {
+            // value:number,
+            // enumerable:true,
+            // writable:true,
+            // configurable:true
+
+            //get函数（getter）
+            get: function() {
+                return number
+            },
+
+            set(value){
+                number = value;
+            },
+        })
+        console.log(person)
+
+        const v = new Vue({
+            el: '#root',
+            data: {
+                name:'第一种data'
+            }
+        })
+        
+    </script>
+</html>

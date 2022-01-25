@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>初识Vue</title>
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            姓：<input type="text" v-model="firstName"> <br/><br/>
+            名：<input type="text" v-model="lastName"> <br/><br/>
+            姓名：<span>{{fullName()}}</span>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+        
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                firstName:'张',
+                lastName:'三'
+            },
+            methods: {//每改一下数据，都会重新解析模板
+                fullName() {
+                    return this.firstName + '-' + this.lastName
+                }
+            },
+        })
+    </script>
+</html>

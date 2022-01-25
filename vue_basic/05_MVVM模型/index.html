@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>初识Vue</title>
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <input type="text" v-bind:value="name">
+            <!-- v-model:value可以简写为v-model。v-model只能用于有value的元素 -->
+            <input type="text" v-model="name">
+
+            <!-- 简写形式： -->
+            <input type="text" :value="name">
+            <input type="text" v-model="name">
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+        const v = new Vue({
+            // el: '#root',
+            // data: {
+            //     name:'第一种data'
+            // }
+            
+            // data:function() {
+            //     return {
+            //         name: '第二种data'
+            //     }
+            // }
+            data() {
+                return {
+                    name: '第二种data'
+                }
+            }
+        })
+        
+        setTimeout(function(){
+            v.$mount('#root')
+        }, 1000)
+    </script>
+</html>

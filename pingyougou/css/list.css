@@ -29,3 +29,115 @@
     font-size: 14px;
     font-family: icomoon;
 }
+/* 列表页内容区域 */
+.sk_bd {
+    margin-top: 25px;
+    overflow: hidden;
+}
+.sk_bd ul {
+    width: 1300px;
+}
+.sk_goods {
+    position: relative;
+    float: left;
+    width: 288px;
+    height: 438px;
+    border: 1px solid transparent;
+    margin: 0 12px 10px 0;
+}
+.sk_goods:hover {
+    border: 1px solid #e11128;
+}
+.sk_goods img {
+    display: block;
+    margin: 9px auto;
+}
+.sk_goods_title {
+    font-size: 14px;
+    color: #666666;
+    font-weight: normal;
+    padding: 10px 10px 15px;
+}
+.sk_goods_price {
+    padding: 0px 10px;
+}
+.sk_goods_price em{
+    font-size: 22px;
+    color: #e60012;
+}
+.sk_goods_price del{
+    font-size: 14px;
+    font-weight: bold;
+    color: #a4a4a4;
+}
+.sk_goods_progress {
+    padding: 0px 10px ;
+}
+.bar {
+    display: inline-block;
+    vertical-align: middle;
+    width: 130px;
+    height: 10px;
+    border: 1px solid #b1191a;
+    margin: 0 5px;
+    border-radius: 5px;/*高度的一半*/
+    overflow: hidden;
+}
+.bar_in {
+    height: 10px;
+    background-color: #f24349;
+    width: 87%;
+}
+.sk_goods_progress em,
+.sk_goods_progress i {
+    color: #f24349;
+}
+.sk_goods_buy {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: #b1191a;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 22px;
+    bottom: 0;
+    position: absolute;
+}
+.page {
+    text-align: center;
+    margin: 40px 0;
+}
+.page_num a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+}
+.page_num .pn_prev, 
+.page_num .pn_next {
+    width: 83px;
+}
+.page_num .current,
+.page_num .dotted {
+    border: 1px solid transparent;
+    background: transparent;
+}
+.page_skip input {
+    width: 35px;
+    height: 36px;
+    border: 1px solid #ccc;
+    text-align: center;
+    transition: all 0.3s;
+}
+.page_skip input:focus {
+    width: 88px;
+    border: 1px solid #f24349;
+}
+.page_skip button {
+    width: 54px;
+    height: 36px;
+    border: 1px solid #ccc;
+}

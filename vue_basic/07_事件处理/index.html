@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>初识Vue</title>
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <h1>{{name}}</h1>
+            <button @click="showInfo1">点我1</button>
+            <button @click="showInfo2($event, 66)">点我2</button>
+            <!-- <input type="text" v-model="name"> -->
+
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+
+        const vm = new Vue({
+            el: '#root',
+            data: {//data里的东西会被vm做数据代理，methods里的不会
+                name:'尚硅谷'
+            },
+            methods: {
+                showInfo1() {
+                    // console.log(event.target)
+                    // console.log(this) // vm
+                    alert('同学你好')
+                },
+                showInfo2(evnet, number) {
+                    console.log(number)
+                }
+            }
+        })
+        
+    </script>
+</html>
