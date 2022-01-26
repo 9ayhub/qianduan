@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>初识Vue</title>
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <h2>今天天气很{{info}}</h2>
+            <button @click='changeWheather'>切换天气</button>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+        
+        new Vue({
+            el: '#root',
+            data: {
+                isHot:true,
+            },
+            computed: {
+                info() {
+                    return this.isHot ? '炎热' : '凉爽'
+                }
+            },
+            methods: {
+                changeWheather() {
+                    this.isHot = !this.isHot
+                }
+            },
+            watch: {
+                isHot: {
+                    immediate:true,//让handler初始化时调用一下
+                    //handler在isHot改变时调用
+                    handler(newValue, oldValue) {
+                        console.log('isHot改变', newValue, oldValue)
+                    }
+                }
+            }
+        })
+    </script>
+</html>

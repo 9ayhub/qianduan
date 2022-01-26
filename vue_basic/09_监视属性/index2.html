@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>初识Vue</title>
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <h2>今天天气很{{info}}</h2>
+            <button @click='changeWheather'>切换天气</button>
+
+            <hr/>
+
+            <h2>{{numbers.a}}</h2>
+            <button @click='numbers.a++'>点我让a + 1</button>
+
+            <h2>{{numbers.b}}</h2>
+            <button @click='numbers.b++'>点我让b + 1</button>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+        
+        new Vue({
+            el: '#root',
+            data: {
+                isHot:true,
+                numbers:{
+                    a:1,
+                    b:1
+                }
+            },
+            computed: {
+                info() {
+                    return this.isHot ? '炎热' : '凉爽'
+                }
+            },
+            methods: {
+                changeWheather() {
+                    this.isHot = !this.isHot
+                }
+            },
+            watch: {
+                isHot: {
+                    handler(newValue, oldValue) {
+                        console.log('isHot改变', newValue, oldValue)
+                    }
+                },
+                'numbers.a': {
+                    handler() {
+                        console.log('a变了')
+                    }
+                },
+                numbers: {
+                    deep:true,
+                    handler() {
+                        console.log('numbers变了')
+                    }
+                }
+            }
+        })
+    </script>
+</html>

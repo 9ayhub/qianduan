@@ -43,51 +43,40 @@
 
 using namespace std;
 
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
+class Solution {
+public:
+    vector<int> preSum;
+    int subarraySum(vector<int>& nums, int k) {
+        if(!k) return 0;
+        int n = nums.size();
+        preSum = vector<int>(n + 1);
+        cout << "ddd ";
+        for(int i = 1; i <= n; i++) {
+            preSum[i] = preSum[i - 1] + nums[i - 1];
+            cout << preSum[i] << " ";
+        }
+        cout << endl;
 
-TreeNode* helper(queue<TreeNode*>& nodes) {
-    if(nodes.empty()) return nullptr;
-    TreeNode* root = nodes.front();
-    nodes.pop();
-    if(!root) return nullptr;
-    root->left = helper(nodes);
-    root->right = helper(nodes);
-    return root;
-}
-
-// Encodes a tree to a single string.
-string serialize(TreeNode* root) {
-    if(!root) return "#";
-    return to_string(root->val) + "," + serialize(root->left) + "," + serialize(root->right);
-}
-
-// Decodes your encoded data to tree.
-TreeNode* deserialize(string data) {
-    queue<TreeNode*> nodes;
-    regex ws_re(",");
-    vector<string> v(sregex_token_iterator(data.begin(), data.end(), ws_re, -1), sregex_token_iterator());
-    for(auto a : v) {
-        TreeNode* root = nullptr;
-        if(a != "#") root = new TreeNode(atoi(a.c_str()));
-        nodes.push(root);
+        int res = 0;
+        for(int i = 0; i < n + 1; i++) {
+            for(int j = i + 1; j < n + 1; j++) {
+                if(preSum[j] - preSum[i] == k) {
+                    res++;
+                }
+            }
+        }
+        return res;
     }
-    return helper(nodes);
-}
-
+};
 
 
 
 int main() {
-    TreeNode* root = new TreeNode(1);
-    root->left = new TreeNode(2);
-    root->right = new TreeNode(3);
-    string s = serialize(root);
-    cout << s << endl;
-    TreeNode* res_root = deserialize(s);
-    cout << serialize(res_root) << endl;
+    vector<int> nums;
+    nums.push_back(-1);
+    nums.push_back(-1);
+    nums.push_back(1);
+    Solution s;
+    int res = s.subarraySum(nums, 1);
+    cout << "\nres: " << res;
 }

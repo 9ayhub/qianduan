@@ -36,6 +36,9 @@
                 // }
                 fullName(){
                     console.log('get被调用了')
+                    setTimeout(()=>{
+                        console.log('hello')
+                    }, 1000)
                     return this.firstName + '-' + this.lastName
                 }
             }

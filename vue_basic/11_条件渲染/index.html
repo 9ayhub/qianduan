@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>初识Vue</title>
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <!-- <h2 v-show='false'>欢迎来到{{name}}</h2>
+            <h2 v-if='false'>欢迎来到{{name}}</h2> -->
+            <h2>n:{{n}}</h2>
+            <button @click="n++">点我</button>
+
+            <br/><br/>
+            <h2 v-show="n == 1">你是</h2>
+            <h2 v-show="n == 2">傻逼</h2>
+            <h2 v-show="n == 3">吗</h2>
+
+            <br/><br/>
+            <h2 v-if="n == 1">你是</h2>
+            <h2 v-else-if="n == 2">傻逼</h2>
+            <h2 v-else-if="n == 3">吗</h2>
+
+            <template v-if="n < 10">
+                <h2>你好</h2>
+                <h2>大傻逼</h2>
+                <h2>讨厌你</h2>
+            </template>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+        new Vue({
+            el: '#root',
+            data: {
+                name:'尚硅谷',
+                n: 0,
+            }
+        })
+        
+    </script>
+</html>

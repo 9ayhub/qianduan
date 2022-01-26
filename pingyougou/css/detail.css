@@ -1,0 +1,82 @@
+/* 详情页的样式文件 */
+.de_container {
+    margin-top: 20px;
+}
+.crumb_wrap {
+    height: 25px;
+}
+.crumb_wrap a {
+    margin-right: 10px;
+}
+.preview_wrap {
+    width: 400px;
+    height: 590px;
+}
+.preview_img {
+    height: 398px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+.preview_list {
+    position: relative;
+    height: 60px;
+    margin-top: 60px;
+}
+.list_item {
+    width: 330px;
+    height: 60px;
+    margin: 0 auto;
+}
+.list_item li {
+    float: left;
+    width: 57px;
+    height: 57px;
+    border: 1px solid transparent;
+    overflow: hidden;
+    margin: 0 3px;
+}
+.list_item li.current {
+    border: 1px solid #c81623;
+}
+.arrow_prev,
+.arrow_next {
+    position: absolute;
+    top: 15px;
+    width: 22px;
+    height: 32px;
+}
+.arrow_prev {
+    left: 0;
+    background: url(../img/disabled-prev.png) no-repeat;
+}
+.arrow_next {
+    right: 0;
+    background: url(../img/disabled-next.png) no-repeat;
+}
+.itemInfo_wrap {
+    width: 718px;
+}
+.sku_name {
+    font-size: 16px;
+    height: 30px;
+    font-weight: bold;
+}
+.news {
+    height: 32px;
+    color: #c12228;
+}
+.summary dl {
+    overflow: hidden;
+}
+.summary dt,
+.summary dd {
+    float: left;
+}
+.summary dt {
+    width: 60px;
+    padding-left: 10px;
+}
+.summary_price {
+    padding: 10px 0;
+    background: #fee9eb;
+}

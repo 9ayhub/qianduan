@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>初识Vue</title>
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <ul>
+                <!-- <li v-for="person in persons" :key="person.id">{{person.name}}</li> -->
+                <li v-for="(p, index) in persons" :key="index">{{p.name}}</li>
+            </ul>
+
+            <ul>
+                <li v-for="(c, k) in cars" :key='k'>{{c}}</li>
+            </ul>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+        new Vue({
+            el: '#root',
+            data: {
+                persons: [
+                    {id: '001', name:'张三', age:18},
+                    {id: '002', name:'傻逼', age:19},
+                    {id: '003', name:'梨梨', age:20},
+                ],
+                cars: {
+                    name:'奥迪',
+                    color:'red'
+                }
+
+            }
+        })
+        
+    </script>
+</html>
