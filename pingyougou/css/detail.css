@@ -75,8 +75,219 @@
 .summary dt {
     width: 60px;
     padding-left: 10px;
+    line-height: 36px;
 }
-.summary_price {
+.summary_price,
+.summary_promotion
+ {
     padding: 10px 0;
     background: #fee9eb;
+    position: relative;
+}
+.summary_price a {
+    color: #c81623;
+}
+.summary_price .remark {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+.price {
+    font-size: 24px;
+    color: #e12228;
+}
+.summary_promotion {
+    padding-top: 0;
+}
+.summary_promotion dd {
+    width: 450px;
+    line-height: 36px;
+}
+.summary_promotion em {
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    line-height: 22px;
+    background: #c81623;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+}
+.summary_support dd {
+    line-height: 36px;
+}
+.choose_color,
+.choose_version,
+.choose_type,
+.choose_rongliang {
+    margin: 5px 0;
+}
+.choose_color a,
+.choose_version a,
+.choose_type a,
+.choose_rongliang a {
+    display: inline-block;
+    width: 80px;
+    height: 41px;
+    background: #f7f7f7;
+    border: 1px solid #ededed;
+    text-align: center;
+    line-height: 41px;
+}
+.summary a.current {
+    border-color: #c81623;
+}
+.choose_btns {
+    margin-top: 20px;
+}
+.choose_amount {
+    position: relative;
+    float: left;
+    width: 50px;
+    height: 46px;
+}
+.choose_amount input {
+    width: 33px;
+    height: 44px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.choose_amount a {
+    position: absolute;
+    width: 15px;
+    height: 22px;
+    line-height: 22px;
+    background-color: #f1f1f1;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-left: 0;
+}
+.choose_amount .add {
+    top: 0;
+}
+.choose_amount .minus {
+    bottom: 0;
+    cursor: not-allowed;
+}
+.addCar {
+    display: inline-block;
+    width: 142px;
+    height: 46px;
+    background-color: #c81623;
+    text-align: center;
+    line-height: 46px;
+    color: #fff;
+    font-size: 18px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+.product_detail {
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.aside {
+    float: left;
+    width: 208px;
+    border: 1px solid #ccc;
+}
+.tab_list {
+    height: 34px;
+    overflow: hidden;
+}
+/* 背景颜色、底边框都给li */
+.tab_list li {
+    float: left;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+    height: 33px;
+    text-align: center;
+    line-height: 33px;
+}
+/* 鼠标点击 */
+.tab_list .current {
+    background-color: #fff;
+    border-bottom: 0;
+    color: red;
+}
+.first_tab {
+    width: 104px;
+}
+.second_tab {
+    width: 103px;
+    border-left: 1px solid #ccc;
+}
+.tab_con {
+    text-align: center;
+    padding: 0 10px;
+}
+.tab_con li{
+    border-bottom: 1px solid #ccc;
+}
+.tab_con li h5{
+    /* 超出的文字省略号显示 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+}
+.tab_con_list {
+    width: 208px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.tab_con_list li {
+    float: left;
+    width: 76px;
+    height: 32px;
+    line-height: 32px;
+    margin-left: 10px;
+    text-align: center;
+}
+.aside_price {
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: left;
+}
+.detail {
+    float: right;
+    width: 978px;
+}
+.as_addcar {
+    display: block;
+    width: 88px;
+    height: 26px;
+    line-height: 26px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    margin: 10px auto;
+}
+.detail_tab_list {
+    height: 39px;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+.detail_tab_list li {
+    float: left;/*因为没给宽度，所以会跟父亲一样宽，加个浮动就会变成和内容一样宽*/
+    height: 39px;
+    line-height: 39px;
+    padding: 0 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.detail_tab_list .current {
+    background-color: #c81623;
+    color: #fff;
+}
+.item_info {
+    padding: 20px 0 0 20px;
+}
+.item_info li {
+    line-height: 22px;
+}
+.more {
+    float: right;
+    font-weight: bold;
+}
+.more_icon {
+    font-family: icomoon;
 }
